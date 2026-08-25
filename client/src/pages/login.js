@@ -52,10 +52,10 @@ export default function LoginPage() {
           </Link>
         </p>
         <div className="mt-6 rounded-xl border border-brand-500/20 bg-brand-500/5 px-4 py-3 text-left">
-          <p className="text-xs font-bold uppercase tracking-wider text-brand-300">How it helps NITC students</p>
+          <p className="text-xs font-bold uppercase tracking-wider text-brand-300">For NITC students</p>
           <p className="mt-1 text-xs leading-5 text-slate-300">
-            Raise campus requests, see which team is handling them, and stay updated as they move forward.
-            Agentflow_AI brings routine student support into one clear, trackable place.
+            Agentflow_AI helps you turn campus requests into organized workflows, follow progress across teams,
+            and keep important updates from getting lost.
           </p>
         </div>
       </div>

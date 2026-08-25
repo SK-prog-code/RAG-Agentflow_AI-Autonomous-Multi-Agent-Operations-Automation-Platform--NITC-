@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const dns = require('dns');
 const env = require('./env');
 
 let mongoMemoryServerInstance = null;
@@ -8,10 +7,6 @@ const getSafeMongoUri = (uri) => uri.replace(/:\/\/([^:]+):([^@]+)@/, '://$1:***
 
 const connectDB = async () => {
   try {
-    if (env.DNS_SERVERS) {
-      dns.setServers(env.DNS_SERVERS.split(',').map((server) => server.trim()).filter(Boolean));
-    }
-
     if (env.MONGODB_URI && env.MONGODB_URI.includes('<db_password>')) {
       throw new Error('MONGODB_URI still contains the <db_password> placeholder');
     }

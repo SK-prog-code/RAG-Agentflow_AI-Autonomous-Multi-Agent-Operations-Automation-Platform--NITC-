@@ -1,4 +1,5 @@
 const integrationService = require('../services/integrationService');
+const env = require('../config/env');
 
 const listIntegrations = async (req, res, next) => {
   try {
@@ -68,9 +69,9 @@ const handleOAuthCallback = async (req, res, next) => {
     }
 
     await integrationService.handleOAuthCallback(provider, code, state);
-    res.redirect(`http://localhost:3000/integrations?connected=${provider}`);
+    res.redirect(`${env.CLIENT_URL}/integrations?connected=${provider}`);
   } catch (error) {
-    res.redirect(`http://localhost:3000/integrations?error=${encodeURIComponent(error.message)}`);
+    res.redirect(`${env.CLIENT_URL}/integrations?error=${encodeURIComponent(error.message)}`);
   }
 };
 
